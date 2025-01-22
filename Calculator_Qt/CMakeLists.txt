@@ -9,12 +9,27 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
 qt_standard_project_setup()
 
-include_directories(inc)
-include_directories(src)
+include_directories(Calculator PRIAVATE inc src)
 
-file(GLOB_RECURSE SOURCES "src/*.cpp" "inc/*.h")
+set(SOURCES
+    src/Bin.cpp
+    src/Calculator.cpp
+    src/Hex.cpp
+    src/main.cpp
+    src/mainwindow.cpp
+    src/mainwindow.ui
+    src/Oct.cpp
+)
 
-qt_add_executable(Calculator ${SOURCES})
+set(HEADERS
+    inc/Bin.h
+    inc/Calculator.h
+    inc/Hex.h
+    inc/mainwindow.h
+    inc/Oct.h
+)
+
+qt_add_executable(Calculator ${SOURCES} ${HEADERS})
 
 target_link_libraries(Calculator PRIVATE Qt6::Widgets)
 
