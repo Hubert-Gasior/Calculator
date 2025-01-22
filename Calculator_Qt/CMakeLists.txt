@@ -9,7 +9,7 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
 qt_standard_project_setup()
 
-include_directories(Calculator PRIAVATE inc src)
+include_directories(Calculator PRIVATE inc src)
 
 set(SOURCES
     src/Bin.cpp
