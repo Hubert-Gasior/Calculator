@@ -32,20 +32,34 @@ message( STATUS "MFC_FOUND: ${MFC_FOUND}" )
 
 
 # Inform CMake where the header files are
-include_directories(inc)
-include_directories(src)
+include_directories(${PROJECT_NAME} PRIVATE src inc)
 
-# Automatically add all *.cpp files to the project
-file ( GLOB SOURCES "src/*.cpp" "inc/*.h" "inc/*.rc" )
+set(SOURCES
+    src/Bin.cpp
+    src/Calculator.cpp
+    src/Hex.cpp
+    src/MFC.cpp
+    src/MFCDlg.cpp
+    src/Oct.cpp
+    src/pch.cpp
+)
+
+set(HEADERS
+    inc/Bin.h
+    inc/Calculator.h
+    inc/Hex.h
+    inc/MFC.h
+    inc/MFC.rc
+    inc/MFCDlg.h
+    inc/Oct.h
+    inc/framework.h
+    inc/pch.h
+    inc/resource.h
+    inc/targetver.h
+)
 
 # Add source file to the build executable
-add_executable( ${PROJECT_NAME} WIN32 ${SOURCES} )
+add_executable( ${PROJECT_NAME} WIN32 ${SOURCES} ${HEADERS} )
 
 # Set the default project 
 set_property( DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME} )
-
-
-
-
-
-
