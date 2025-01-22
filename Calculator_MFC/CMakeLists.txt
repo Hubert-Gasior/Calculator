@@ -1,3 +1,4 @@
+#CMakeLists.txt stworzony przez prof. dr hab. inż. Bogusław Cyganek
 cmake_minimum_required( VERSION 3.21.0 )
 
 # For a new project it is sufficient to change only its name in the following line
