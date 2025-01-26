@@ -5,6 +5,10 @@ project(Calculator VERSION 1.0.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+#Do kompilacji należy użyć kompilatorów dostarczonych przez Qt należy zmienić scieżkę odpowiednia dla swojego katalogu 
+set(CMAKE_C_COMPILER "C:/Qt/Tools/mingw1310_64/bin/gcc.exe")
+set(CMAKE_CXX_COMPILER "C:/Qt/Tools/mingw1310_64/bin/g++.exe")
+
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
 qt_standard_project_setup()
